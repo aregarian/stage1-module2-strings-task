@@ -17,19 +17,19 @@ public class StringSplitterTest extends TestCase {
             "m", "1", "2", "3", "4", "5", "6", "7");
 
     @Test
-    public void testSplitByDelimiters() {
+    public void testSplitByDelimiters() throws UnsupportedOperationException {
         List<String> result = splitter.splitByDelimiters("qw3e1rt4yu2i3opa1sd1fg2hj4kl", List.of("1", "2", "3"));
         assertEquals(List.of("qw", "e", "rt4yu", "i", "opa", "sd", "fg", "hj4kl"), result);
     }
 
     @Test
-    public void testRandomCases() {
+    public void testRandomCases() throws UnsupportedOperationException {
         for (int i = 0; i < RANDOM_CASES_COUNT; i++) {
             testRandomCase(random.nextInt(5) + 5);
         }
     }
 
-    private void testRandomCase(int delimitersNumber) {
+    private void testRandomCase(int delimitersNumber) throws UnsupportedOperationException {
         Set<String> delimiters = selectDelimiters(delimitersNumber);
         StringBuilder all = new StringBuilder();
         List<String> expectedResult = new ArrayList<>();

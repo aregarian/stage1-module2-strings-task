@@ -8,7 +8,7 @@ public class MethodParserTest extends TestCase {
     private MethodParser parser = new MethodParser();
 
     @Test
-    public void testParseFunction() {
+    public void testParseFunction() throws UnsupportedOperationException {
         MethodSignature signature = parser.parseFunction("private void log(String logString, LogLevel level, Context context)");
         assertEquals(signature.getAccessModifier(), "private");
         assertEquals(signature.getReturnType(), "void");
@@ -20,7 +20,7 @@ public class MethodParserTest extends TestCase {
     }
 
     @Test
-    public void testParseFunctionNoAccessModifier() {
+    public void testParseFunctionNoAccessModifier() throws UnsupportedOperationException {
         MethodSignature signature = parser.parseFunction("String repeat(String value, int times)");
         assertNull(signature.getAccessModifier());
         assertEquals(signature.getReturnType(), "String");
@@ -31,7 +31,7 @@ public class MethodParserTest extends TestCase {
     }
 
     @Test
-    public void testParseFunctionNoArguments() {
+    public void testParseFunctionNoArguments() throws UnsupportedOperationException {
         MethodSignature signature = parser.parseFunction("public float mark()");
         assertEquals(signature.getAccessModifier(), "public");
         assertEquals(signature.getReturnType(), "float");
