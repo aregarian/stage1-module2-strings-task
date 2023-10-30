@@ -17,7 +17,7 @@ public class StringSplitterTest extends TestCase {
             "m", "1", "2", "3", "4", "5", "6", "7");
 
     @Test
-    public void testSplitByDelimiters() throws UnsupportedOperationException {
+    public void testSplitByDelimiters()  {
         List<String> result = splitter.splitByDelimiters("qw3e1rt4yu2i3opa1sd1fg2hj4kl", List.of("1", "2", "3"));
         assertEquals(List.of("qw", "e", "rt4yu", "i", "opa", "sd", "fg", "hj4kl"), result);
     }
@@ -29,7 +29,7 @@ public class StringSplitterTest extends TestCase {
         }
     }
 
-    private void testRandomCase(int delimitersNumber) throws UnsupportedOperationException {
+    private void testRandomCase(int delimitersNumber)  {
         Set<String> delimiters = selectDelimiters(delimitersNumber);
         StringBuilder all = new StringBuilder();
         List<String> expectedResult = new ArrayList<>();
