@@ -31,7 +31,12 @@ public class MethodParser {
      * @param signatureString source string to parse
      * @return {@link MethodSignature} object filled with parsed values from source string
      */
-    public MethodSignature parseFunction(String signatureString) throws UnsupportedOperationException {
+    public MethodSignature parseFunction(String signatureString)  {
+        try {
+
+        }catch (java.lang.UnsupportedOperationException e) {
+
+        }
 
 
         StringTokenizer data = new StringTokenizer(signatureString, "(,) ");
