@@ -17,9 +17,15 @@ public class StringSplitter {
         StringTokenizer token = new StringTokenizer(source, str);
         ArrayList<String> hehe = new ArrayList<String>();
 
-        while (token.hasMoreTokens()) {
-            hehe.add(token.nextToken());
+        try {
+            while (token.hasMoreTokens()) {
+                hehe.add(token.nextToken());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
 
 
 
